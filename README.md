@@ -1,1 +1,1 @@
-# This_is_a_coding_test
+# This-is-a-coding-test
