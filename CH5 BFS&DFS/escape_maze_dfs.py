@@ -31,24 +31,24 @@ def __main__():
 
     DFS(0, 0, 1)
 
-    return print(mincnt)
+    return print("output >>", mincnt)
   
 __main__()
 
 ''' 
+answer = 10
 5 6
 101010
 111111
 000001
 111111
 111111
-answer = 10
 
+answer = 20
 5 10 
 1001100011
 1001110100
 1111010111
 1010010101
 1110111101
-answer = 20
 '''
