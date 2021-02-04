@@ -1,3 +1,5 @@
+# ch5 BFS/DFS pratice problem
+
 dpos = [(0, 1), (-1, 0), (0, -1), (1, 0)]
 
 def DFS(x,y,cnt):
