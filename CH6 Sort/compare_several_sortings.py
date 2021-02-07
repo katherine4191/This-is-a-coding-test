@@ -1,9 +1,5 @@
-
-
 # selection sort 선택 정렬
 # 가장 작은 것을 선택해 차례대로 맨 앞의 데이터와 바꾸는 정렬 방법
-unsorted = [7,5,9,0,3,1,6,2,4,8]
-
 def selection_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -12,10 +8,8 @@ def selection_sort(arr):
             if arr[min_idx] > arr[j]:
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
-        print("sorting ... ",arr)
+        #print("sorting ... ",arr)
     return arr
-
-#selection_sort(unsorted)
 
 ''' output
 sorting ...  [0, 5, 9, 7, 3, 1, 6, 2, 4, 8]
@@ -32,8 +26,6 @@ sorting ...  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # Insertion sort 삽입 정렬
 # 특정한 값을 적절한 위치에 삽입하는 정렬 방법(그 위치 앞까지는 이미 정렬되어 있음)
-unsorted = [7,5,9,0,3,1,6,2,4,8]
-
 def insertion_sort(arr):
     n = len(arr)
     for i in range(1,n):
@@ -42,10 +34,8 @@ def insertion_sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
             else: 
                 break
-        print("sorting ... ",arr)          
+        #print("sorting ... ",arr)          
     return arr 
-
-#insertion_sort(unsorted)
 
 ''' output
 sorting ...  [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
@@ -62,38 +52,41 @@ sorting ...  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # quick sort 퀵 정렬
 # pivot을 사용하여 왼쪽부터 pivot보다 큰 데이터를 찾고, 오른쪽부터 pivot보다 작은 데이터를 찾아
 # 큰 데이터와 작은 데이터를 찾아 위치를 서로 교환하는 정렬 방법
-unsorted = [5,7,9,0,3,1,6,2,4,8]
-
-def quick_sort(pv_idx, arr):
-    n = len(arr)
-    left, right = pv_idx + 1, n - 1
+def quick_sort(pivot, end, arr):
+    if pivot >= end:
+        return    
     
-    # while left <= right:
-    #     print(arr)
-    #     while left < n and arr[pv_idx] >= arr[left]:
-    #         left += 1
-    #     while right > pv_idx and arr[pv_idx] <= arr[right]:
-    #         right -= 1
-    #     print("left, right:", left, right)
+    left, right = pivot + 1, end
+    
+    while left <= right:
+        while left <= end and arr[pivot] >= arr[left]:
+            left += 1
+        while right > pivot and arr[pivot] <= arr[right]:
+            right -= 1
 
-    #     if left > right: # 두 값이 엇갈린 경우 작은 데이터(right)와 pivot 교체
-    #         arr[pv_idx], arr[right] = arr[right], arr[pv_idx]
-    #         print("cross range \npivot = ", arr[pv_idx], arr)  
-    #     else:
-    #         arr[left], arr[right] = arr[right], arr[left]
-    #         print("pivot = ", arr[pv_idx], arr)  
+        if left > right: # 두 값이 엇갈린 경우 작은 데이터(right)와 pivot 교체
+            arr[pivot], arr[right] = arr[right], arr[pivot]
+            #print("sorting ... "arr)
+        else:
+            arr[left], arr[right] = arr[right], arr[left]
 
-    #     #print("pivot = ", arr[pv_idx], "sorting ... ", arr)  
-    # quick_sort(pv_idx, arr[:right - 1])
-    # quick_sort(right + 1, arr[right + 1:])
+    # 현재는 arr[right]에 pivot 값이 존재, pivot은 배열의 앞 부분을 의미
+    quick_sort(pivot, right - 1, arr) 
+    quick_sort(right + 1, end, arr)
     return arr
 
-#quick_sort(0, unsorted)
+''' pivot이 바뀌는 과정
+sorting ... [0, 1, 2, 4, 3, 5, 6, 9, 7, 8]
+sorting ... [0, 1, 2, 4, 3, 5, 6, 9, 7, 8]
+sorting ... [0, 1, 2, 3, 4, 5, 6, 9, 7, 8]
+sorting ... [0, 1, 2, 3, 4, 5, 6, 9, 7, 8]
+sorting ... [0, 1, 2, 3, 4, 5, 6, 8, 7, 9]
+sorting ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sorting ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+'''
 
 # counting sort
 # 별도의 리스트를 선언하고 그 안에 정렬에 대한 정보를 담아 정렬하는 방법
-unsorted = [7,5,9,0,3,1,6,2,9,1,4,8,0,5,2]
-
 def counting_sort(arr):
     count_arr = [0 for _ in range(max(arr)+1)]
 
@@ -108,4 +101,18 @@ def counting_sort(arr):
             
     return arr
 
-print(counting_sort(unsorted))
+
+def main():
+    unsorted = [5,7,9,0,3,1,6,2,4,8]
+    print("selection_sort",selection_sort(unsorted))
+    
+    unsorted = [7,5,9,0,3,1,6,2,4,8]
+    print("insertion_sort", insertion_sort(unsorted))
+
+    unsorted = [7,5,9,0,3,1,6,2,4,8]
+    print("quick_sort", quick_sort(0, len(unsorted)-1, unsorted))
+    
+    unsorted = [7,5,9,0,3,1,6,2,9,1,4,8,0,5,2]
+    print("counting_sort", counting_sort(unsorted))
+
+main()
