@@ -85,7 +85,7 @@ sorting ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 sorting ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 '''
 
-# counting sort
+# counting sort 계수 정렬
 # 별도의 리스트를 선언하고 그 안에 정렬에 대한 정보를 담아 정렬하는 방법
 def counting_sort(arr):
     count_arr = [0 for _ in range(max(arr)+1)]

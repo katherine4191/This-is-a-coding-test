@@ -4,7 +4,7 @@ dpos = [(0,1),(1,0),(0,-1),(-1,0)]
 
 def DFS(x, y):
     global N, M, ice_tray, visit
-
+  
     for dx, dy in dpos:
         nx, ny = x + dx, y + dy
         if nx < 0 or nx >= N or ny < 0 or ny >= M or visit[nx][ny] == 1:
