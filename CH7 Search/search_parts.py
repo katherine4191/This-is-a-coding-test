@@ -72,6 +72,7 @@ end_time = timeit.default_timer()
 def make_testcase():
     # input_text: txt 파일에 쓸 내용
     input_list = random.sample(range(1,1000), 60)
+    
     input_len = len(input_list)
     
     input_text = 'N = '+ str(input_len) + '\n' + '['
