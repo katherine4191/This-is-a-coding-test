@@ -44,6 +44,3 @@ def create_input(min, max, N):
 
 # create_input(1, 20, 10)
 # create_input(1, 30, 20)
-
-# floor_construction
-# money_composition
