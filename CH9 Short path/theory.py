@@ -4,11 +4,14 @@
 # 시간 복잡도 O(N^2) or O(E*logV) # E: 간선의 개수,  V: 노드의 개수
 
 # "basic Dijkstra"
-# code
-# 각 노드의 연결 정보를 담고 있는 리스트, 방문한 적이 있는지 체크하는 리스트, 최단 거리 테이블
+# [code]
+# 각 노드의 연결 정보를 담고 있는 리스트 graph, 방문한 적이 있는지 체크하는 리스트 visited, 최단 거리 테이블 dist
+# get_shortest_node_idx() 다음에 방문할 번호를 반환하는 함수
 
 # "improved Dijkstra"
-# 
+# [code]
+# import heapq
+# 각 노드의 연결 정보를 담고 있는 리스트 graph, 방문한 적이 있는지 체크하는 리스트 visited, 최단 거리 테이블 dist
 
 '''2. 플로이드 워셜 알고리즘'''
 # 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야 하는 경우
