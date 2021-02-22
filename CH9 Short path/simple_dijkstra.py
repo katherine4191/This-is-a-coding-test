@@ -27,6 +27,7 @@ def get_shortest_node_idx():
 
 def dijkstra(n_start): 
     '''시작 노드에 대한 처리'''
+    global dist
     dist[n_start] = 0
     visited[n_start] = True
     for b, cost in graph[n_start]: # 시작 노드와 연결된 간선 확인 및 거리 갱신
