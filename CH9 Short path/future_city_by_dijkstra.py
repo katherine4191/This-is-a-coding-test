@@ -39,9 +39,13 @@ if __name__ == '__main__':
     dist = [INF] * (n + 1)
     dijkstra(k, graph, dist)
     answer += dist[x]
-    print(answer)
 
-# 다익스트라로 안 되는 이유가 도대체 뭘까
+    if answer > INF:
+        print(-1)
+    else:
+        print(answer)
+
+# 나의 실수!!
 # 1. x와 k의 순서
 # 2. 입력으로 받은 간선의 정보는 단방향이 아니라 양방향임!
 
