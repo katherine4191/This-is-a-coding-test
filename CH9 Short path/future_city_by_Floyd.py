@@ -4,12 +4,13 @@
 
 INF = int(1e9) # 무한을 의미하는 값
 
-def Floyd_Warshall(n):
+def Floyd_Warshall(n, e):
     dist = [[INF] * (n + 1) for a in range(n + 1)]
 
     # 대각 행렬 및 간선 정보 초기화
     for a in range(1, n + 1):
         dist[a][a] = 0
+
     for _ in range(e):
         a, b = map(int, input().split())
         dist[a][b], dist[b][a] = 1, 1
@@ -23,7 +24,7 @@ def Floyd_Warshall(n):
 
 if __name__ == '__main__':
     n, e = map(int, input().split())
-    dist = Floyd_Warshall(n)
+    dist = Floyd_Warshall(n, e)
     
     x, k = map(int, input().split())
     answer = dist[1][k] + dist[k][x]
@@ -45,10 +46,12 @@ input 1
 3 5
 4 5
 4 5
+output 1: 3
 
 input 2
 4 2
 1 3
 2 4
 3 4
+output 2: -1
 '''
