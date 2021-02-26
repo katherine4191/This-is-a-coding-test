@@ -7,7 +7,8 @@ import sys
 input = sys.stdin.readline # input의 개수가 많을 때
 INF = int(1e9) # 무한을 의미하는 값
 
-def dijkstra(n_start, graph, dist):
+def dijkstra(n, n_start, graph):
+    dist = [INF] * (n + 1)
     que = []
     heapq.heappush(que, (0, n_start))
     dist[n_start] = 0
@@ -20,11 +21,11 @@ def dijkstra(n_start, graph, dist):
             if next_cost < dist[b]:
                 dist[b] = next_cost
                 heapq.heappush(que, (dist[b], b))
+    return dist
 
 if __name__ == '__main__':
     n, e = map(int, input().split())
     graph = [[] for _ in range(n + 1)]
-    dist = [INF] * (n + 1)
 
     for _ in range(e):
         a, b = map(int, input().split())
@@ -33,17 +34,13 @@ if __name__ == '__main__':
 
     x, k = map(int, input().split()) # 1 -> k -> x
     answer = 0
-    dijkstra(1, graph, dist)
-    answer += dist[k]
-
-    dist = [INF] * (n + 1)
-    dijkstra(k, graph, dist)
-    answer += dist[x]
+    dist = dijkstra(n, 1, graph);    answer += dist[k]
+    dist = dijkstra(n, k, graph);    answer += dist[x]
 
     if answer > INF:
-        print(-1)
-    else:
-        print(answer)
+        answer = -1
+
+    print(answer)
 
 # 나의 실수!!
 # 1. x와 k의 순서
@@ -60,10 +57,12 @@ input 1
 3 5
 4 5
 4 5
+output 1: 3
 
 input 2
 4 2
 1 3
 2 4
 3 4
+output 2: -1
 '''
