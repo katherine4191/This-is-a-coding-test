@@ -23,6 +23,7 @@ for k in range(N):
             dist[a][b] = min(dist[a][b], dist[a][k] + dist[k][b])
 
 print(dist)
+
 # 여기서는 beijing, seoul, tokyo, hawaii 이렇게 순서로 네트워크를 구축할 때 12 최소 비용
 
 '''
@@ -35,9 +36,10 @@ tokyo hawaii 5
 beijing tokyo 5
 >> 12
 
+
 3
 seoul busan 10
 busan daegu 7
 daegu busan 2
->> 12
+>> 12 
 '''
