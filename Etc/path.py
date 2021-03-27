@@ -36,7 +36,6 @@ tokyo hawaii 5
 beijing tokyo 5
 >> 12
 
-
 3
 seoul busan 10
 busan daegu 7
