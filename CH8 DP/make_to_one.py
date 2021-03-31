@@ -1,3 +1,5 @@
+from function import *
+
 #n = int(input())
 
 ''' 
@@ -35,12 +37,6 @@ def make_to_one(n):
 
 for num in nums:
     make_to_one(num)
-
-'''testcase 생성하기'''
-import random
-def create_input(min, max, N):
-    input_list = random.sample(range(min,max), N)
-    print(input_list)
 
 #create_input(6, 10000, 10)
 

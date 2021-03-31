@@ -1,6 +1,8 @@
 # 효율적인 화폐 구성
 # n가지의 종류의 화폐로 M원을 만드는 화폐의 최소 개수 구하기
 
+from function import *
+
 # n,m = map(int, input().split()) 
 # coins = [0] * n
 # table = [10001] * (m + 1) # 0 <= m <= 10000
@@ -42,12 +44,6 @@ else:
 
 # print(table)
 # print(table[m])
-
-'''testcase 생성하기'''
-import random
-def create_input(min, max, N):
-    input_list = random.sample(range(min,max), N)
-    print(input_list)
 
 # create_input(1, 100, 10)
 # create_input(1, 10000, 1)
