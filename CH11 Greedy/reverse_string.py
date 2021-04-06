@@ -1,4 +1,4 @@
-# p314 문자열 뒤집기
+# p314 3. 문자열 뒤집기
 import os.path as os_pth
 import sys
 sys.path.append(os_pth.dirname(os_pth.abspath(os_pth.dirname(__file__))))

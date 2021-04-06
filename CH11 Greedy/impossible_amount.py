@@ -1,4 +1,4 @@
-# p315 만들 수 없는 금액
+# p315 4. 만들 수 없는 금액
 # 가지고 있는 화폐들을 더해서 만들 수 없는 최소 금액
 import os.path as os_pth
 import sys

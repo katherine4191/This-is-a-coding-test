@@ -1,4 +1,4 @@
-# p313 곱하기 또는 더하기
+# p313 2. 곱하기 또는 더하기
 import os.path as os_pth
 import sys
 sys.path.append(os_pth.dirname(os_pth.abspath(os_pth.dirname(__file__))))

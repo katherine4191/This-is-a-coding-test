@@ -1,4 +1,4 @@
-# p312 모험가 길드
+# p312 1. 모험가 길드
 import os.path as os_pth
 import sys
 sys.path.append(os_pth.dirname(os_pth.abspath(os_pth.dirname(__file__))))
