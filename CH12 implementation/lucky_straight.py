@@ -1,3 +1,4 @@
+# p322 럭키 스트레이트
 string = input()
 n = len(string)
 
